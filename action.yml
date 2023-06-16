@@ -1,0 +1,22 @@
+name: 'Bump And Push Version'
+description: "Bump package's version with npm and push it to the branch"
+author: 'yuberdysheva'
+inputs:
+  github-token:
+    description: 'This is a token to access github'
+    required: true
+  node-version:
+    description: 'Node.js version used for running linters, tests, etc'
+    required: false
+    default: '14'
+  npm-dist-tag:
+    description: command for publish npm version
+    required: false
+    default: 'alpha'
+
+runs:
+  using: 'node12' # необходимая версия ноды – важно
+  main: 'lib/index.js' # итоговый файл со всем кодом
+branding: # как будет выглядеть иконка экшена в маркетплейсе
+  icon: 'terminal'
+  color: 'blue'
